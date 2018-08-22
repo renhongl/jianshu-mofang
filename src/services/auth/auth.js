@@ -8,13 +8,21 @@ export default class Auth extends Component {
         super(props);
     }
 
+    componentDidUpdate() {
+        message.info(this.props.auth.msg);
+    }
+
     componentDidMount() {
         this.props.signIn({userName: 'renhongl', password: '112233'});
     }
 
+    shouldComponentUpdate(nextProps) {
+        return this.props.auth.msg !== nextProps.auth.msg;
+    }
+
     render() {
         return (
-            <div>{this.props.auth.valid && JSON.stringify(this.props.auth)}</div>
+            <div></div>
         )
     }
 }

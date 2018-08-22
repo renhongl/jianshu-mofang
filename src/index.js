@@ -10,15 +10,14 @@ import { Provider } from 'react-redux';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import createSagaMiddleware  from 'redux-saga';
 import 'antd/dist/antd.css'; 
+import './index.css';
+import { reducer } from './utils/registerReducer';
+import { initialState } from './utils/registerState';
+import { sagas } from './utils/registerSaga';
 
 const sagaMiddleware = createSagaMiddleware();
-
-const initialState = {...homePageInitialState};
-const reducerMapping = {...homePageReducer};
-const reducer = combineReducers(reducerMapping);
 const store = createStore(reducer, initialState, applyMiddleware(sagaMiddleware));
 
-const sagas = [...homePageSaga];
 sagas.forEach(saga => {
     sagaMiddleware.run(saga);
 });

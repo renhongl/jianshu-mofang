@@ -96,5 +96,10 @@
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "devDependencies": {
+    "babel-plugin-import": "^1.8.0",
+    "less": "^2.7.0",
+    "less-loader": "^4.1.0"
   }
 }

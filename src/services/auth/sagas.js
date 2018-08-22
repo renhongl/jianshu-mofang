@@ -3,19 +3,18 @@ import { call, put, takeEvery } from 'redux-saga/effects';
 import * as actionTypes from './actionTypes';
 import * as actions from './actions';
 import { fetchUserInfor } from '../../api/auth';
-import { message } from 'antd';
 
 function* queryUser(action) {
     try {
+        yield put(actions.authSignInStart({msg: 'loading...'}));
         const result = yield call(fetchUserInfor, action.data);
         if (result.length > 0) {
-            yield put(actions.authSignInSuccess({...result[0], msg: 'success', valid: true}));
-            message.info('Sign In Successfully!');
+            yield put(actions.authSignInSuccess({...result[0], msg: 'sign successfully', valid: true}));
         } else {
-            message.warning('User name or password is wrong!');
+            yield put(actions.authSignInFail({msg: 'User name or password is wrong!'}));
         }
     } catch (error) {
-        message.error(error);
+        yield put(actions.authSignInFail({msg: 'failure'}));
     }
 }
 

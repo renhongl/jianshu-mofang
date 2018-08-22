@@ -1,6 +1,8 @@
 
 import * as actionTypes from './actionTypes';
 
+
+/**user dispatch action */
 export const authSignIn = (data) => {
     return {
         type: actionTypes.AUTH_SIGN_IN,
@@ -22,9 +24,26 @@ export const authLogOut = (data) => {
     }
 }
 
+
+
+
+/**api status action */
 export const authSignInSuccess = (data) => {
     return {
         type: actionTypes.AUTH_SIGN_IN_SUCCESS,
+        data
+    }
+}
+
+export const authSignInStart = (data) => {
+    return {
+        type: actionTypes.AUTH_SIGN_IN_START,
+        data
+    }
+}
+export const authSignInFail = (data) => {
+    return {
+        type: actionTypes.AUTH_SIGN_IN_FAIL,
         data
     }
 }
