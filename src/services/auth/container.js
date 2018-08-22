@@ -3,6 +3,8 @@
 import { connect } from 'react-redux';
 import Auth from './auth';
 import * as actions from './actions';
+import { withRouter } from 'react-router-dom';
+
 
 const mapStateToProps = (state, own) => {
     return {
@@ -16,7 +18,7 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(
+export default withRouter(connect(
     mapStateToProps,
     mapDispatchToProps
-)(Auth);
+)(Auth));
