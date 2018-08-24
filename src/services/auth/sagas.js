@@ -3,19 +3,18 @@ import { call, put, takeEvery } from 'redux-saga/effects';
 import * as actionTypes from './actionTypes';
 import * as actions from './actions';
 import { fetchUserInfor } from '../../api/auth';
-import { message } from 'antd';
 
 function* queryUser(action) {
     try {
+        yield put(actions.authSignInStart({msg: '登陆中...', valid: false}));
         const result = yield call(fetchUserInfor, action.data);
         if (result.length > 0) {
-            yield put(actions.authSignInSuccess({...result[0], msg: 'success', valid: true}));
-            message.info('Sign In Successfully!');
+            yield put(actions.authSignInSuccess({...result[0], msg: '登录成功，正在跳转。', valid: true}));
         } else {
-            message.warning('User name or password is wrong!');
+            yield put(actions.authSignInFail({msg: '用户名或密码错误。', valid: false}));
         }
     } catch (error) {
-        message.error(error);
+        yield put(actions.authSignInFail({msg: '未知错误。', valid: false}));
     }
 }
 
