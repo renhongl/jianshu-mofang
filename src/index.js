@@ -25,6 +25,7 @@ const SigninPage = getComponent(() => import('./pages/signin'));
 const SignupPage = getComponent(() => import('./pages/signup'));
 const About = getComponent(() => import('./pages/about'));
 const NotFound = getComponent(() => import('./pages/notFound'));
+const Charts = getComponent(()=> import('./pages/charts'));
 
 const sagaMiddleware = createSagaMiddleware();
 const store = createStore(reducer, initialState, applyMiddleware(sagaMiddleware));
@@ -41,6 +42,7 @@ ReactDOM.render(
                 <Route path="/signIn" component={SigninPage}></Route>
                 <Route path="/signUp" component={SignupPage}></Route>
                 <Route path="/about" component={About}></Route>
+                <Route path="/chart" component={Charts}></Route>
                 <Route component={NotFound}></Route>
             </Switch>
         </Router>
