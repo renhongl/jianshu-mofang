@@ -1,6 +1,5 @@
 
 
 {
-    "signIn": "/mockData/user.json",
-    "hotSearch": "/mockData/hotSearch.json"
+    "signIn": "/mockData/user.json"
 }

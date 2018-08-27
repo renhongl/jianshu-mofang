@@ -1,6 +1,5 @@
 import React,{Component} from "react";
 import {view as LineChart} from "../services/lineChart";
-import {view as BarChart} from "../services/barChart";
 
 export default class Echarts extends Component{
     constructor(props){
@@ -26,7 +25,6 @@ export default class Echarts extends Component{
         return(
             <section>
                 <LineChart xAxis={this.state.xAxis} data={this.state.data}/>
-                <BarChart xAxis={this.state.xAxis} data={this.state.data}/>
             </section>
         )
     }

@@ -21,9 +21,6 @@ import getComponent from './utils/asyncComponent';
 
 //get async page, for dynamic loading
 const HomePage = getComponent(() => import('./pages/home'));
-const SigninPage = getComponent(() => import('./pages/signin'));
-const SignupPage = getComponent(() => import('./pages/signup'));
-const About = getComponent(() => import('./pages/about'));
 const NotFound = getComponent(() => import('./pages/notFound'));
 const Charts = getComponent(()=> import('./pages/charts'));
 
@@ -39,8 +36,6 @@ ReactDOM.render(
         <Router>
             <Switch>
                 <Route exact path="/" component={HomePage}></Route>
-                <Route path="/signIn" component={SigninPage}></Route>
-                <Route path="/signUp" component={SignupPage}></Route>
                 <Route path="/about" component={About}></Route>
                 <Route path="/chart" component={Charts}></Route>
                 <Route component={NotFound}></Route>
