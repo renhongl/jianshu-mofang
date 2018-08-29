@@ -1,6 +1,6 @@
 import React from "react";
 import { List, Avatar, Icon } from 'antd';
-
+import "./style.less";
 
 
 const IconText = ({ type, text }) => (
