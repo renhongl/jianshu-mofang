@@ -1,36 +1,32 @@
 [
     {
         "href": "http://ant.design",
-        "title": "title1",
+        "title": "对使用Redux和Redux-saga管理状态的思考",
         "avatar": "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png",
-        "description": "Ant Design, a design language for background applications, is refined by Ant UED Team.",
-        "content": "We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently."
+        "description": "概述本文介绍了我对 Redux 状态管理的思想、原理、架构方法的认识和思考以及配合redux-saga处理异步操作的实践前言You know, React 只是属于MV*架构模式的 view 层，是一种状态机"
       },
       {
         "href": "http://ant.design",
-        "title": "学合二为一",
+        "title": "对使用Redux和Redux-saga管理状态的思考",
         "avatar": "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png",
         "description": "作为一个自由，最大的梦想就是和最爱的人有一个可以宅的窝，虽然爱人暂时没有，但是窝可以有。"
       },
       {
         "href": "http://ant.design",
-        "title": "title3",
+        "title": "对使用Redux和Redux-saga管理状态的思考",
         "avatar": "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png",
-        "description": "Ant Design, a design language for background applications, is refined by Ant UED Team.",
-        "content": "We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently."
+        "description": "概述本文介绍了我对 Redux 状态管理的思想、原理、架构方法的认识和思考以及配合redux-saga处理异步操作的实践前言You know, React 只是属于MV*架构模式的 view 层，是一种状态机"
       },
       {
         "href": "http://ant.design",
-        "title": "title4",
+        "title": "对使用Redux和Redux-saga管理状态的思考",
         "avatar": "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png",
-        "description": "Ant Design, a design language for background applications, is refined by Ant UED Team.",
-        "content": "We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently."
+        "description": "概述本文介绍了我对 Redux 状态管理的思想、原理、架构方法的认识和思考以及配合redux-saga处理异步操作的实践前言You know, React 只是属于MV*架构模式的 view 层，是一种状态机"
       },
       {
         "href": "http://ant.design",
-        "title": "title5",
+        "title": "对使用Redux和Redux-saga管理状态的思考",
         "avatar": "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png",
-        "description": "Ant Design, a design language for background applications, is refined by Ant UED Team.",
-        "content": "We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently."
+        "description": "概述本文介绍了我对 Redux 状态管理的思想、原理、架构方法的认识和思考以及配合redux-saga处理异步操作的实践前言You know, React 只是属于MV*架构模式的 view 层，是一种状态机"
       }
 ]
