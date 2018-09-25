@@ -5,8 +5,17 @@ import { Icon } from 'antd';
 import { view as Search } from '../../commons/search';
 import { view as Unauth } from '../../commons/unauth';
 import { message } from 'antd';
+import PropTypes from 'prop-types';
 
 export default class Header extends Component {
+	static propTypes = {
+		auth: PropTypes.object.isRequired
+	}
+
+	static defaultTypes = {
+		auth: {isValid: false}
+	}
+
     constructor(props) {
         super(props);
         this.state = {

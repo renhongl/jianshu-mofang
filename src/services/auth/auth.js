@@ -4,7 +4,15 @@ import React, { Component } from 'react';
 import { message } from 'antd';
 import './style.less';
 
+
+
 export default class Auth extends Component {
+
+	state = {
+		userName: '',
+		password: ''
+	}
+
     constructor(props) {
         super(props);
     }
@@ -33,19 +41,33 @@ export default class Auth extends Component {
     }
 
     onSignin = () => {
-        this.props.signIn({userName: 'renhongl', password: '112233'});
+        this.props.signIn({userName: this.state.userName, password: this.state.password});
     }
+
+	onUserNameChange = e => {
+		this.setState({
+			userName: e.target.value
+		})
+	}
+
+	onPasswordChange = e => {
+		this.setState({
+			password: e.target.value
+		})
+	}
 
     render() {
         return (
             <section className="auth">
-                <p>登录</p>
+                <p><span>登陆</span> * <span>注册</span></p>
                 <div>
-                    <input />
-                    <input />
+                    <input onChange={this.onUserNameChange}/>
+                    <input onChange={this.onPasswordChange}/>
                     <button onClick={this.onSignin}>登录</button>
                 </div>
-            </section>
+           </section>
         )
     }
 }
+
+
