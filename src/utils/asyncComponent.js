@@ -9,7 +9,7 @@ export default getComponent => {
         delay: () => new Promise((resolve, reject) => {
             setTimeout(() => {
                 resolve();
-            }, 2000);
+            }, 1000);
         })
     },
     loading: Loading,

@@ -70,7 +70,7 @@ export default class Header extends Component {
                 </div>
                 <div className="center">
                     <a className="home" href="#"><Icon type="compass" />首页</a>
-                    <a className="download" href="#"><Icon type="cloud-download" />下载App</a>
+                    <a className="download" href="#"><Icon type="cloud-download" />下载</a>
                     <div className="search"><Search searching={searching} hotList={hotList} title="热门搜索"  onFocus={this.onFocus} onBlur={this.onBlur}/></div>
                 </div>
                 {
