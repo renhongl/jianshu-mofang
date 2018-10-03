@@ -28,12 +28,11 @@ export default class ListComp extends React.Component {
                     pageSize: 3,
                 }}
                 dataSource={list}
-                footer={<div><b>ant design</b> footer part</div>}
                 renderItem={item => (
                 <List.Item
                     key={item.title}
-                    actions={[<IconText type="star-o" text="156" />, <IconText type="like-o" text="156" />, <IconText type="message" text="2" />]}
-                    extra={<img width={172} alt="logo" src="https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png" />}
+                    actions={[<IconText type="star-o" text="156" />, <IconText type="like-o" text={item.like} />, <IconText type="message" text={item.message} />]}
+                    extra={<img width={172} alt="logo" src={item.image} />}
                 >
                 <List.Item.Meta
                     avatar={<Avatar src={item.avatar} />}

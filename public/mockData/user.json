@@ -4,11 +4,15 @@
     {
         "id": "001",
         "userName": "renhongl",
-        "password": "112233"
+        "password": "112233",
+        "logo": "",
+        "gender": "m"
     },
     {
         "id": "002",
         "userName": "mogu",
-        "password": "112233"
+        "password": "112233",
+        "logo": "",
+        "gender": "f"
     }
 ]

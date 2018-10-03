@@ -2,7 +2,7 @@
 
 
 import React from 'react';
-import { view as Auth } from '../services/auth';
+import { view as SignIn } from '../services/signIn';
 
 const styles = {
 	main: {
@@ -19,7 +19,7 @@ const styles = {
 
 export default () => (
     <section>
-        <Auth style={styles.main}/>
+        <SignIn style={styles.main}/>
     </section>
 )
 

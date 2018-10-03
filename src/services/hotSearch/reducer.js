@@ -2,21 +2,21 @@
 
 import * as actionTypes from './actionTypes';
 
-export default (header = null, action) => {
+export default (hotSearch = null, action) => {
     switch(action.type) {
         case actionTypes.GET_HOT_SEARCH:
-            return {...header, ...action.data};
+            return {...hotSearch, ...action.data};
 
         case actionTypes.GET_HOT_SEARCH_START:
-            return {...header, ...action.data};
+            return {...hotSearch, ...action.data};
 
         case actionTypes.GET_HOT_SEARCH_SUCCESS:
-            return {...header, ...action.data};
+            return {...hotSearch, ...action.data};
 
         case actionTypes.GET_HOT_SEARCH_FAIL:
-            return {...header, ...action.data};
+            return {...hotSearch, ...action.data};
 
         default:
-            return header;
+            return hotSearch;
     }
 }

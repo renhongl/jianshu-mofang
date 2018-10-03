@@ -1,32 +1,52 @@
 [
-    {
-        "href": "http://ant.design",
+    { 
+        "href": "/#/articleDetail/1",
+        "id": 1,
+        "author": "renhong",
         "title": "对使用Redux和Redux-saga管理状态的思考",
-        "avatar": "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png",
+        "image": "https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png",
+        "like": 54,
+        "message": 12,
         "description": "概述本文介绍了我对 Redux 状态管理的思想、原理、架构方法的认识和思考以及配合redux-saga处理异步操作的实践前言You know, React 只是属于MV*架构模式的 view 层，是一种状态机"
       },
       {
-        "href": "http://ant.design",
+        "href": "/#/articleDetail/2",
+        "id": 2,
+        "author": "renhong",
         "title": "对使用Redux和Redux-saga管理状态的思考",
-        "avatar": "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png",
+        "image": "https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png",
+        "like": 54,
+        "message": 12,
         "description": "作为一个自由，最大的梦想就是和最爱的人有一个可以宅的窝，虽然爱人暂时没有，但是窝可以有。"
       },
       {
-        "href": "http://ant.design",
+        "href": "/#/articleDetail/3",
+        "id": 3,
+        "author": "renhong",
         "title": "对使用Redux和Redux-saga管理状态的思考",
-        "avatar": "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png",
+        "image": "https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png",
+        "like": 54,
+        "message": 12,
         "description": "概述本文介绍了我对 Redux 状态管理的思想、原理、架构方法的认识和思考以及配合redux-saga处理异步操作的实践前言You know, React 只是属于MV*架构模式的 view 层，是一种状态机"
       },
       {
-        "href": "http://ant.design",
+        "href": "/#/articleDetail/4",
+        "id": 4,
+        "author": "renhong",
         "title": "对使用Redux和Redux-saga管理状态的思考",
-        "avatar": "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png",
+        "image": "https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png",
+        "like": 54,
+        "message": 12,
         "description": "概述本文介绍了我对 Redux 状态管理的思想、原理、架构方法的认识和思考以及配合redux-saga处理异步操作的实践前言You know, React 只是属于MV*架构模式的 view 层，是一种状态机"
       },
       {
-        "href": "http://ant.design",
+        "href": "/#/articleDetail/5",
+        "id": 5,
+        "author": "renhong",
         "title": "对使用Redux和Redux-saga管理状态的思考",
-        "avatar": "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png",
+        "image": "https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png",
+        "like": 54,
+        "message": 12,
         "description": "概述本文介绍了我对 Redux 状态管理的思想、原理、架构方法的认识和思考以及配合redux-saga处理异步操作的实践前言You know, React 只是属于MV*架构模式的 view 层，是一种状态机"
       }
 ]

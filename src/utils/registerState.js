@@ -1,10 +1,14 @@
 
 
 
-import {initialState as auth} from '../services/auth';
-import {initialState as header} from '../services/header';
+import {initialState as signIn} from '../services/signIn';
+import {initialState as hotSearch} from '../services/hotSearch';
+import {initialState as article} from '../services/article';
+import {initialState as articleDetail} from '../services/articleDetail';
 
 export const initialState = {
-    auth,
-    header
+    signIn,
+    hotSearch,
+    article,
+    articleDetail,
 };

@@ -2,18 +2,19 @@
 import React, { Component } from 'react';
 import '../styles/style.less';
 import { Icon } from 'antd';
-import { view as Search } from '../../../commons/search';
-import { view as Unauth } from '../../../commons/unauth';
+import { view as HotSearch } from '../../hotSearch';
+import { view as Unauth } from '../../unauth';
+import { view as Auth } from '../../auth';
 import { message } from 'antd';
 import PropTypes from 'prop-types';
 
 export default class Header extends Component {
 	static propTypes = {
-		auth: PropTypes.object.isRequired
+		signIn: PropTypes.object
 	}
 
 	static defaultTypes = {
-		auth: {isValid: false}
+		signIn: {}
 	}
 
     constructor(props) {
@@ -23,46 +24,8 @@ export default class Header extends Component {
         }
     }
 
-    onFocus = () => {
-        this.setState({
-            searching: true
-        });
-        this.props.getHotSearch();
-    }
-
-    onBlur = () => {
-        this.setState({
-            searching: false
-        });
-    }
-
-    onSignIn = () => {
-        this.props.history.push('/signIn');
-    }
-
-    onSignUp = () => {
-        this.props.history.push('/signUp');
-    }
-
-    onWrite = () => {
-        if (this.props.auth.valid) {
-
-        } else {
-            message.info('未登录，即将前往登录。');
-            setTimeout(() => {
-                this.props.history.push('/signIn');
-            }, 2000);
-        }
-    }
-
     render() {
-        const { searching } = this.state;
-        const { header, auth } = this.props;
-        const hotList = header.hotSearch.map((item, key) => {
-            return (
-                <a href="#" key={key}>{item}</a>
-            )
-        })
+        const { signIn } = this.props;
         return (
             <header className="jianshu-header">
                 <div className="left">
@@ -71,11 +34,12 @@ export default class Header extends Component {
                 <div className="center">
                     <a className="home" href="#"><Icon type="compass" />首页</a>
                     <a className="download" href="#"><Icon type="cloud-download" />下载</a>
-                    <div className="search"><Search searching={searching} hotList={hotList} title="热门搜索"  onFocus={this.onFocus} onBlur={this.onBlur}/></div>
+                    <div className="search"><HotSearch /></div>
                 </div>
                 {
-                    auth.valid ? (<div>登录之后</div>) :
-                    (<Unauth onSignIn={this.onSignIn} onSignUp={this.onSignUp} onWrite={this.onWrite}/>)
+                    signIn.status === 0 ? 
+                    <Auth /> :
+                    <Unauth />
                 }
             </header>
         )

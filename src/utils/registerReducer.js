@@ -2,11 +2,15 @@
 
 
 import { combineReducers } from 'redux';
-import { reducer as auth } from '../services/auth';
-import { reducer as header } from '../services/header';
+import { reducer as signIn } from '../services/signIn';
+import { reducer as hotSearch } from '../services/hotSearch';
+import { reducer as article } from '../services/article';
+import { reducer as articleDetail } from '../services/articleDetail';
 
 
 export const reducer  = combineReducers({
-    auth,
-    header
+    signIn,
+    hotSearch,
+    article,
+    articleDetail,
 });
