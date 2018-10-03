@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import Loadable from "react-loadable";
 import { view as Loading } from '../commons/loading';
 

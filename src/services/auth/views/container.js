@@ -1,24 +1,24 @@
 
 
 import { connect } from 'react-redux';
-import Header from './header';
-import * as actions from './actions';
+import Auth from './auth';
+import * as actions from '../actions';
 import { withRouter } from 'react-router-dom';
+
 
 const mapStateToProps = (state, own) => {
     return {
-        header: state.header,
         auth: state.auth
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        getHotSearch: () => dispatch(actions.getHotSearch())
+        signIn: (user) => dispatch(actions.authSignIn(user))
     }
 }
 
 export default withRouter(connect(
     mapStateToProps,
     mapDispatchToProps
-)(Header));
+)(Auth));

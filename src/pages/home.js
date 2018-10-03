@@ -3,10 +3,9 @@
 
 import React, { Fragment } from 'react';
 import { view as Header } from '../services/header';
-import {view as Hello } from "../commons/helloworld";
-// import {view as List} from "../commons/list";
+import { view as Carousel } from "../commons/carousel";
 import { view as List } from '../services/article';
-import {view as Reconmend} from "../services/reconmend";
+import { view as Reconmend } from "../services/reconmend";
 
 
 const styles = {
@@ -23,14 +22,13 @@ const styles = {
 }
 
 export default () => (
-    <Fragment>
-    <Header />
-	<section style={styles.body}>
-	    <Hello />
-	    <Reconmend />
-	    <List />
-	</section>
-        
-    </Fragment>
+	<Fragment>
+		<Header />
+		<section style={styles.body}>
+			<Carousel />
+			<Reconmend />
+			<List />
+		</section>
+	</Fragment>
 )
 

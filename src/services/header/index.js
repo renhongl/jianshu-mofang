@@ -1,10 +1,11 @@
 
 
 
-import view from './container';
+import view from './views/container';
 import * as actions from './actions';
 import reducer from './reducer';
 import saga from './sagas';
+import initialState from './initialState';
 
 
 export {
@@ -12,4 +13,5 @@ export {
     actions,
     reducer,
     saga,
+    initialState,
 }

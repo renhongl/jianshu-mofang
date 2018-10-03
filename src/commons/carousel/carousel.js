@@ -2,10 +2,10 @@ import React from 'react';
 import { Carousel } from 'antd';
 import './style.less';
 
-class hello extends React.Component{
+class CarouselComp extends React.Component{
     render(){
         return(
-            <Carousel autoplay className = "helloworld">
+            <Carousel autoplay>
             <div><img src="./images/carousel/1.jpg"/></div>
             <div><img src="./images/carousel/2.jpg"/></div>
             <div><img src="./images/carousel/3.jpg"/></div>
@@ -15,4 +15,4 @@ class hello extends React.Component{
     }
 }
 
-export  default hello;
+export  default CarouselComp;

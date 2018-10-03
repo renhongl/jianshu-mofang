@@ -1,8 +1,8 @@
 
 
 
-import auth from '../services/auth/initialState.json';
-import header from '../services/header/initialState.json';
+import {initialState as auth} from '../services/auth';
+import {initialState as header} from '../services/header';
 
 export const initialState = {
     auth,

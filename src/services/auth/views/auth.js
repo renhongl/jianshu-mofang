@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react';
 import { message } from 'antd';
-import './style.less';
+import '../styles/style.less';
 
 
 

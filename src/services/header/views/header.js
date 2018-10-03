@@ -1,9 +1,9 @@
 
 import React, { Component } from 'react';
-import './style.less';
+import '../styles/style.less';
 import { Icon } from 'antd';
-import { view as Search } from '../../commons/search';
-import { view as Unauth } from '../../commons/unauth';
+import { view as Search } from '../../../commons/search';
+import { view as Unauth } from '../../../commons/unauth';
 import { message } from 'antd';
 import PropTypes from 'prop-types';
 
