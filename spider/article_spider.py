@@ -2,13 +2,27 @@
 from selenium import webdriver
 from database import get_db, insert_one
 import time, json, random
+from configparser import ConfigParser
 
 COLLECTION = 'article'
 PAGE_TOTAL = 20
-END_PAGE = 1
+end_page = 1
+save_db = False
+save_file = False
 
 start_page = 1
 db = get_db('jianshu')
+
+def set_config():
+    global end_page
+    global save_db
+    global save_file
+    cfg = ConfigParser()
+    cfg.read('./config.ini')
+    end_page = cfg.get('article', 'end_page')
+    save_db = cfg.get('article', 'save_db')
+    save_file = cfg.get('article', 'save_file')
+
 
 def get_browser():
     chrome_options = webdriver.ChromeOptions()
@@ -58,9 +72,9 @@ def get_article_links(browser):
 
 def get_article_infor(browser, link):
     browser.execute_script("arguments[0].click();", link)
-    # link.click()
     browser.switch_to_window(browser.window_handles[1])
     arctile = {
+        '_id': random.random(),
         'title': browser.find_element_by_css_selector('.article h1').text,
         'author': browser.find_element_by_css_selector('.author .name').text,
         'time': browser.find_element_by_css_selector('.author .publish-time').text,
@@ -68,39 +82,45 @@ def get_article_infor(browser, link):
         'views': browser.find_element_by_css_selector('.author .views-count').text,
         'comments': browser.find_element_by_css_selector('.author .comments-count').text,
         'likes': browser.find_element_by_css_selector('.author .likes-count').text,
-        'content': browser.find_element_by_css_selector('.article .show-content').get_attribute("innerHTML")
+        'content': browser.find_element_by_css_selector('.article .show-content').text
     }
     browser.close()
     browser.switch_to_window(browser.window_handles[0])
     return arctile
 
 
-def save_to_file(file, file_name):
-    with open('./output/article/a-' + file_name + '.json', 'w', encoding='utf-8') as f:
-        f.write(json.dumps(file, indent=4, ensure_ascii=False))
+def save_to_file(infor, file_name):
+    with open('./output/article/' + file_name + '.json', 'w', encoding='utf-8') as f:
+        f.write(json.dumps(infor, indent=4, ensure_ascii=False))
 
 
 def save_data(links, browser):
     global PAGE_TOTAL
     global start_page
     global db
-    global END_PAGE
+    global end_page
+    global save_db
+    global save_file
     index = 0
     for link in links:
         index = index + 1
         infor = get_article_infor(browser, link)
-        file_name = 'Article-' + PAGE_TOTAL * (start_page - 1) + index
-        # save_to_file(infor, file_name)
-        # insert_one(db, COLLECTION, infor)
+        article_number = PAGE_TOTAL * (start_page - 1) + index
+        file_name = 'Article-' + str(article_number)
+        if save_db == 'yes':
+            insert_one(db, COLLECTION, infor)
+        if save_file == 'yes':
+            save_to_file(infor, file_name)
         print('%d. Saved: %s' % ((PAGE_TOTAL * (start_page - 1) + index), infor['title']))
             
     start_page = start_page + 1
-    if start_page <= END_PAGE:
+    if start_page <= int(end_page):
         links = get_article_links(browser)
         save_data(links, browser)
 
 
 if __name__ == '__main__':
+    set_config()
     try:
         browser = get_browser()
         links = get_article_links(browser)
