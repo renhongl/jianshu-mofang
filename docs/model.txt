@@ -1,0 +1,38 @@
+
+User Model
+1. user_name: string=>max_length=50, min_length=5
+1. mail: email
+1. password_has: string
+2. follower: int
+3. followee: int
+4. user_logo: url=>max_length=200
+5. article_number: int
+6. word_number: int
+7. like_number: int
+7. phone_number: string
+8. article_list: ref array=>article_id
+9. moment_list: ref array=>moment_id
+10. introduction: string
+
+
+Article Model
+1. title: string
+2. user: ref=>user_id
+3. time: date
+4. word_number: int
+5. view_number: int
+6. comment_number: int
+7. like_number: int
+8. content: string
+9. comment_list: ref array=>comment_id
+
+
+Comment Model
+1. comment_by: ref array=>user_id
+2. content: string
+3. time: date
+4. like_number: int
+5. reply_number: int
+6. reply_list: ref array=>comment_id
+
+

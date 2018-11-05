@@ -10,9 +10,9 @@ def async_mail(app, msg):
     with app.app_context():
         mail.send(msg)
 
-def welcome(to):
+def welcome(to, user_name):
     app = current_app._get_current_object()
-    msg = Message('简书', recipients=[to], body='欢迎注册简书，您将在我们的网站中找到各种优秀的文章。如有任何疑问请联系扣扣：1075220132')
+    msg = Message('简书', recipients=[to], body='欢迎['+user_name+']注册简书，您将在我们的网站中找到各种优秀的文章。如有任何疑问请联系扣扣：1075220132')
     thread = Thread(target=async_mail, args=(app, msg))
     thread.start()
 

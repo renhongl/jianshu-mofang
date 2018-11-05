@@ -4,6 +4,7 @@ from flask import Flask, jsonify
 from jianshu.blueprints.auth import auth_bp
 from jianshu.blueprints.user import user_bp
 from jianshu.blueprints.article import article_bp
+from jianshu.blueprints.comment import comment_bp
 from jianshu.settings import config
 import os
 
@@ -20,6 +21,7 @@ def register_blueprints(app):
     app.register_blueprint(auth_bp, url_prefix='/auth')
     app.register_blueprint(user_bp)
     app.register_blueprint(article_bp)
+    app.register_blueprint(comment_bp)
 
 
 def register_errors(app):
