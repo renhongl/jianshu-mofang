@@ -12,6 +12,7 @@ save_file = False
 
 start_page = 1
 db = get_db('jianshu')
+user_list = []
 
 def set_config():
     global end_page
@@ -71,19 +72,23 @@ def get_article_links(browser):
 
 
 def get_article_infor(browser, link):
+    global user_list
     browser.execute_script("arguments[0].click();", link)
     browser.switch_to_window(browser.window_handles[1])
     arctile = {
         '_id': random.random(),
         'title': browser.find_element_by_css_selector('.article h1').text,
-        'author': browser.find_element_by_css_selector('.author .name').text,
+        'author': {
+            'user_name': browser.find_element_by_css_selector('.author .name').text
+        },
         'time': browser.find_element_by_css_selector('.author .publish-time').text,
-        'words': browser.find_element_by_css_selector('.author .wordage').text,
-        'views': browser.find_element_by_css_selector('.author .views-count').text,
-        'comments': browser.find_element_by_css_selector('.author .comments-count').text,
-        'likes': browser.find_element_by_css_selector('.author .likes-count').text,
+        'words': int(browser.find_element_by_css_selector('.author .wordage').text.split(' ')[1]),
+        'views': int(browser.find_element_by_css_selector('.author .views-count').text.split(' ')[1]),
+        'comments': int(browser.find_element_by_css_selector('.author .comments-count').text.split(' ')[1]),
+        'likes': int(browser.find_element_by_css_selector('.author .likes-count').text.split(' ')[1]),
         'content': browser.find_element_by_css_selector('.article .show-content').text
     }
+    user_list.append(browser.find_element_by_css_selector('.author .name a').get_attribute('href'))
     browser.close()
     browser.switch_to_window(browser.window_handles[0])
     return arctile
@@ -127,5 +132,8 @@ if __name__ == '__main__':
         save_data(links, browser)
 
     finally:
-        time.sleep(5)
+        print('Finished...')
         close_browser(browser)
+        print('Saving user links...')
+        with open('./output/user/user_list.json', 'w', encoding='utf-8') as f:
+            f.write(json.dumps(user_list, indent=4, ensure_ascii=False))
