@@ -1,0 +1,13 @@
+
+
+{ 
+    "href": "/#/articleDetail/1",
+    "id": 1,
+    "author": "renhong",
+    "title": "对使用Redux和Redux-saga管理状态的思考",
+    "image": "https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png",
+    "like": 54,
+    "message": 12,
+    "description": "概述本文介绍了我对 Redux 状态管理的思想、原理、架构方法的认识和思考以及配合redux-saga处理异步操作的实践前言You know, React 只是属于MV*架构模式的 view 层，是一种状态机",
+    "content": "<h3>APIResponseFormat:</h3><ul><li><p>StartLoading:</p><pre><code>{&quot;status&quot;:1,&quot;loading&quot;:true,&quot;msg&quot;:&quot;loading&quot;,&quot;data&quot;:null}</code></pre></li><li><p>LoadingSuccess:</p><pre><code>{&quot;status&quot;:0,&quot;loading&quot;:false,&quot;msg&quot;:&quot;success&quot;,&quot;data&quot;:{}}</code></pre></li><li><p>LoadingFailure:</p><pre><code>{&quot;status&quot;:1,&quot;loading&quot;:false,&quot;msg&quot;:&quot;fail&quot;,&quot;data&quot;:null}</code></pre></li></ul>"
+  }
