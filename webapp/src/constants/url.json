@@ -1,8 +1,12 @@
 
 
 {
-    "signIn": "/mockData/user.json",
+    "signIn": "http://127.0.0.1:5000/auth/login",
+    "signOut": "http://127.0.0.1:5000/auth/logout",
+    "register": "http://127.0.0.1:5000/auth/register",
+    "article": "http://127.0.0.1:5000/article",
+    "comment": "http://127.0.0.1:5000/comment",
+    "user": "http://127.0.0.1:5000/user",
     "hotSearch": "/mockData/hotSearch.json",
-    "article": "/mockData/article.json",
     "articleDetail": "/mockData/articleDetail.json"
 }

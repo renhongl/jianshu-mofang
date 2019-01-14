@@ -1,0 +1,8 @@
+
+
+{
+    "signIn": "/mockData/user.json",
+    "hotSearch": "/mockData/hotSearch.json",
+    "article": "/mockData/article.json",
+    "articleDetail": "/mockData/articleDetail.json"
+}

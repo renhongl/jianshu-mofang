@@ -11,10 +11,9 @@ export const signIn = (data) => {
     }
 }
 
-export const signInStart = (data) => {
+export const signInStart = () => {
     return {
         type: actionTypes.SIGN_IN_START,
-        data
     }
 }
 
@@ -25,9 +24,8 @@ export const signInSuccess = (data) => {
     }
 }
 
-export const signInFail = (data) => {
+export const signInFail = () => {
     return {
         type: actionTypes.SIGN_IN_FAIL,
-        data
     }
 }

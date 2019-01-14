@@ -11,22 +11,10 @@ export default class SignIn extends Component {
 	state = {
 		userName: '',
 		password: ''
-	}
-
-    constructor(props) {
-        super(props);
     }
-
-    componentDidUpdate() {
-        // message.info(this.props.auth.msg);
-    }
-
-    componentDidMount() {
+    
+    componentWillReceiveProps(nextProps) {
         
-    }
-
-    shouldComponentUpdate(nextProps) {
-        return this.props.signIn.msg !== nextProps.signIn.msg;
     }
 
     componentWillUpdate(nextProps) {

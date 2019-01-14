@@ -27,7 +27,7 @@ export default () => (
 		<section style={styles.body}>
 			<Carousel />
 			<Reconmend />
-			<List />
+			{/* <List /> */}
 		</section>
 	</Fragment>
 )

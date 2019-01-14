@@ -8,15 +8,15 @@ import { startingFormat, successFormat, failFormat } from '../../utils/response'
 
 function* queryUser(action) {
     try {
-        yield put(actions.signInStart({...startingFormat, msg: '登陆中...'}));
+        yield put(actions.signInStart());
         const result = yield call(fetchUserInfor, action.data);
-        if (result.length > 0) {
-            yield put(actions.signInSuccess({...successFormat, data: result[0], msg: '登录成功，正在跳转。'}));
+        if (result.status === '0000') {
+            yield put(actions.signInSuccess(result));
         } else {
-            yield put(actions.signInFail({...failFormat, msg: '用户名或密码错误。'}));
+            yield put(actions.signInFail());
         }
     } catch (error) {
-        yield put(actions.signInFail({...failFormat, msg: '未知错误。'}));
+        yield put(actions.signInFail());
     }
 }
 
